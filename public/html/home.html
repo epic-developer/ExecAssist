@@ -1,0 +1,155 @@
+<div id="tutorialFinderModal" style="display:none" class="modal">
+	<div class="modalContent">
+		<div class="modalHeader">
+			<span onclick="document.getElementById('tutorialFinderModal').style.display = 'none'" class="modalClose">&times;</span>
+            <br />
+			<h2>Tutorials</h2>
+            <br />
+		</div>
+		<div class="modalBody" id="tutorialFinderDisplay" style="background-color:black"></div>
+    </div>
+</div>
+<div id="tutorialViewer" style="display:none" class="modal">
+	
+</div>
+<header>
+	<subsection style="float:left">
+		<a href="#">
+			<img src="./media/icon.svg" class="img" />
+        </a>
+    </subsection>
+    <span style="cursor:default;float:left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    <subsection style="float:left">
+        <a href="#about" class="menuOption">About</a>
+        <a href="#features" class="menuOption">Features</a>
+        <a href="#community" class="menuOption">Community</a>
+    </subsection>
+    <subsection style="float:right">
+        <button onclick="window.open('/login', '_self')">Login</button>
+        <span style="cursor:default">&nbsp;&nbsp;&nbsp;</span>
+    </subsection>
+</header>
+<div class="spacer">
+    <br>
+</div>
+<section>
+    <section2>
+    <div class="subsection">
+        <img src="./media/icon.svg" style="width:60%" />
+    </div>
+    <div class="subsection">
+        <span style="font-size:160%">Open Source Executive Dysfunction Assistance App for Autism and ADHD</span>
+        <br>
+        <br>
+        <br>
+        <button onclick="window.open('/login', '_self')">Get Started</button>
+        <br>
+        <br>
+        <br>
+        <button onclick="window.open('#features', '_self')">Features</button>
+        <br>
+        <br>
+        <button onclick="window.open('#demo', '_self')">Watch Demo</button>
+        <br>
+        <br>
+        <button onclick="openTutorials()">Tutorials</button>
+    </div>
+    </section2>
+</section>
+<hr>
+<section id="about">
+    <div class="subsection">
+        <h1>About</h1>
+    </div>
+    <div class="subsection">
+        <span>ExecAssist.io provides an accessible, free, and simple solution to a complex problem: <u>Executive Dysfunction</u>.
+        ExecAssist.io is aimed at people that experience executive dysfunction, whether it is due to autism, ADHD, or both.
+        ExecAssist.io is built around methods that improve executive function, such as accountability.
+        ExecAssist.io was originally created after the frequent observation of individuals with ADHD and autism trying to find helpful organization/reminder apps.
+        Most of these apps, however, didn't target the areas that they struggled with, were costly, and got boring over time.
+        Each app had its own cool feature. Why couldn't there just be a single app that combines all these features and is free to use?
+        ExecAssist.io was created in response to this question.
+        Because ExecAssist.io is open source, anyone can see the codebase and add their own features.
+        And because people can add their own features, ExecAssist.io will continue to improve and your executive function will improve along with it.</span>
+    </div>
+</section>
+<hr>
+<section id="features">
+    <div class="subsection" id="featuresHeading">
+        <h1>Features</h1>
+    </div>
+    <div class="subsection" id="featuresList">
+        <ul>
+            <li>Realtime data sync across devices</li>
+            <li>Connect all your favorite calendar apps to get notified</li>
+            <li>Repeat tasks with routines</li>
+            <li>Add tasks to lists with colorful labels</li>
+            <li>Share tasks for accountability</li>
+            <li>Set a name, description, location, icon, banner, time, and duration for your tasks</li>
+            <li>Create checklists of substasks in each task</li>
+            <li>Customize tasks and subtasks with a library of icons and banners</li>
+            <li><a href="https://web.dev/progressive-web-apps/" target="_blank">Progressive Web App</a>: Installable, fast, responsive, and modern</li>
+            <li><a href="https://opensource.org/" target="_blank">Open Source</a>: Unlimited, unmonitized, and free forever</li>
+        </ul>
+    </div>
+</section>
+<hr>
+<section id="community">
+    <h1>Community</h1>
+    <span style="font-size:140%">Created by people with autism and ADHD for people with autism and ADHD.</span>
+    <br>
+    <br>
+    <span style="font-size:140%;font-weight:normal">The codebase for ExecAssist.io is publicly available on GitHub for anyone to contribute to!</span>
+    <br>
+    <br>
+    <center>
+        <div style="background-color: rgb(255,255,255,0.2); border-radius:20px" class="openSourceIconBackground">
+            <img src="./media/openSource.webp" style="width:100%" />
+        </div>
+    </center>
+    <br>
+    <span style="font-size:180%;font-family:Orbitron">Sponsored and maintained by</span>
+    <br>
+    <span style="font-size:160%;font-weight:normal;font-family:Orbitron">[Pending Adoption]</span>
+    <br>
+    <br>
+    <span style="font-size:140%;font-weight:normal"><b>GitHub repository</b> and <b>license</b> below</span>
+    <br>
+    <br>
+    <span style="font-weight:normal">Donations help ExecAssist.io add and improve features whilst staying free of cost:</span>
+    <button onclick="window.open('https://www.patreon.com/execassist', '_blank')">Donate</button>
+    <br>
+    <br>
+    <span><u>Developers/Contributors</u> start <a href="https://github.com/epic-developer/ExecAssist" target="_blank">here</a></span>
+    <br>
+    <span><u>Users</u> start <a href="/login" target="_self">here</a></span>
+    <br>
+    <br>
+    <h2 id="demo">Demonstration Video</h2>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/CITNwP59sws" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <br>
+    <br>
+    <button onclick="openTutorials()">Tutorials</button>
+</section>
+<footer>
+    <span>Found a bug/problem or have a feature suggestion? Submit it <a href="https://github.com/epic-developer/ExecAssist/issues/new" target="_blank">here</a></span>
+    <br>
+    <br>
+    <a href="https://github.com/epic-developer/ExecAssist" target="_blank">GitHub Repo</a>
+    <br>
+    <a href="https://github.com/epic-developer/ExecAssist/blob/master/LICENSE" target="_blank">License</a>
+    <br>
+    <a href="/Terms-of-Service" target="_blank">Terms of Service</a>
+    <br>
+    <a href="/Privacy-Policy" target="_blank">Privacy Policy</a>
+    <br>
+    <a href="mailto:contact@execassist.io" target="_blank">Contact</a>
+    <br>
+    <br>
+    <a href="/contributors" target="_blank">Contributors</a>
+    <br>
+    <br>
+    &copy; ExecAssist.io 2021
+    <br>
+    <br>
+</footer>

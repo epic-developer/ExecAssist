@@ -1,0 +1,193 @@
+<center>
+    <div id="navbar">
+		<div>
+			<div style="float:left;margin:5px" id="returnBTN"></div>
+			<div style="clear:both"></div>
+			<span style="float:left;font-size:160%;margin:15px;cursor:default" id="pageName"></span>
+            <img style="float:right;border-radius:50%;width:50px;cursor:pointer" id="profilePhoto" onclick="changePage('Settings')"></img>
+            <span style="float:right;font-size:140%;margin:15px;cursor:default" id="profileName"></span>
+        </div>
+        <div style="clear:both"></div>
+        <br>
+	</div>
+	<div id="Settings" class="page">
+        <div style="text-align:left;padding-left:2%;padding-right:2%">
+            <div class="settingsPanel">
+                <h2>Switch View</h2>
+                <br>
+                <button onclick="changePage('Routines')">Routines</button>
+                <button onclick="changePage('Lists')">Lists</button>
+            </div>
+            <hr />
+            <div class="settingsPanel">
+                <h2>Profile Managment</h2>
+                <span style="font-size:80%"></span>
+                <br>
+                <br>
+                <span style="vertical-align:middle;margin-right:10px">Public Profile</span>
+                <label class="switch" style="vertical-align:middle">
+                    <input type="checkbox" id="settings.publicProfileToggle" class="switch2">
+                    <span class="slider round"></span>
+                </label>
+                <a onclick="alert('Publishing your profile only displays your profile photo, username, and bio on your profile page.')"><i class="material-icons">&#xe88f;</i></a>
+                <br>
+                <br>
+                <h3>Profile Bio</h3>
+                <input type="text" placeholder="Profile Bio" id="settings.bio" />
+                <br>
+                <br>
+                <button id="settings.viewProfilePage">View Profile Page <i class="material-icons" style="vertical-align:middle">&#xe89e;</i></button>
+                <button onclick="saveChanges(0)" style="float:right">Save Changes</button>
+                <span id="settings.alert0" style="float:right"></span>
+                <div style="clear:both"></div>
+            </div>
+            <hr />
+            <div class="settingsPanel">
+                <h2>External Calendar Sync</h2>
+                <br>
+                <span>Export/sync your tasks with your favorite calendar apps.</span>
+                <br>
+                <br>
+                <button id="settings.webcalBTN">Sync Task Feed</button>
+                <br>
+                <br>
+                <span>Having trouble? </span><button onclick="document.getElementById('calSyncSettings').style.display = 'inline'">Advanced info and settings</button>
+                <br>
+                <div id="calSyncSettings" style="padding:20px;display:none">
+                    <span style="font-size:80%">Export your ExecAssist.io task feed in iCal format. In other words, you can link other calendar apps to display ExecAssist.io tasks with the <i>Sync Task Feed</i> button which uses a webcal. If your browser does not support webcals, try using your device's native browser (eg. Safari on iOS). If your device does not support the webcal standard, you can manually enter the iCal URL into a calendar app.</span>
+                    <br>
+                    <br>
+                    <span>Unlike ExecAssist.io realtime sync across devices, calendars will sync/update at an interval that may be decided by the calendar app itself. ExecAssist.io will, however, prompt the calendar app to decrease this interval to 5 minutes or less.</span>
+                    <br>
+                    <br>
+                    <h3>iCal Passcode</h3>
+                    <input type="text" placeholder="iCal Passcode" style="width:300px" id="settings.icalCode" />
+                    <button onclick="autofillICScode()"><i class="material-icons">&#xe5d5;</i>&nbsp;Generate</button>
+                    <br>
+                    <br>
+                    <h3>iCal URL</h3>
+                    <span id="settings.icalURL" style="font-family:Arial"></span>
+                    <br>
+                    <br>
+                    <span>For example, you can manually import an iCal URL into Google Calendar on <a href="https://calendar.google.com/calendar/u/0/r/settings/addbyurl" target="_blank">here</a>.</span>
+                    <button onclick="saveChanges(1)" style="float:right">Save Changes</button>
+                    <span id="settings.alert1" style="float:right"></span>
+                    <div style="clear:both"></div>
+                </div>
+                <br>
+            </div>
+            <hr />
+            <div class="settingsPanel">
+                <h2>Account Managment</h2>
+                <br>
+                <h3>My User ID</h3>
+                <span id="settings.uid" style="font-family:Arial"></span>
+                <br>
+                <br>
+                <button class="redBTN" onclick="logout()">Logout</button>
+                <br>
+                <br>
+                <br>
+                <button class="redBTN" onclick="deleteAccount()">Delete Account</button>
+            </div>
+        </div>
+	</div>
+	<!-- Tasks -->
+	<div id="Dashboard" class="page">
+        
+	</div>
+	<!-- Routines -->
+	<div id="Routines" class="page">
+        <div id="useRoutineModal" style="display:none" class="modal">
+            <div class="modalContent">
+                <div class="modalHeader">
+                    <span class="modalClose" onclick="document.getElementById('useRoutineModal').style.display = 'none'">&times;</span>
+                    <h2>Start Routine</h2>
+                    <h4>Select a date and time to start your routine below</h4>
+                </div>
+                <div class="modalBody" style="background-color:black">
+                    <input type="datetime-local" style="background-color:white;color:black" id="useRoutineTime" />
+                    <button id="useRoutineSubmit">Schedule</button>
+                </div>
+            </div>
+        </div>
+        <h2>Create Routine</h2>
+        <div id="New Routine">
+            <table style="border:none">
+                <tr>
+                    <th style="border:none;padding:5px;vertical-align:top">
+                        <h4>Routine Name:</h4>
+                        <input id="newRoutineName" type="text" style="width:140px" placeholder="Routine Name" value="My New Routine" />
+                    </th>
+                    <th style="border:none;padding:5px;vertical-align:top">
+                        <h4>Create from list:</h4>
+                        <select id="routineSrcList">
+                            
+                        </select>
+                    </th>
+                    <th style="border:none;padding:5px;vertical-align:top">
+                        <button onclick="newRoutine(document.getElementById('newRoutineName').value, document.getElementById('routineSrcList').value)">Create</button>
+                    </th>
+                </tr>
+            </table>
+        </div>
+        <br>
+        <h2>My Routines</h2>
+        <div id="Routine Container"></div>
+	</div>
+	<!-- Lists -->
+	<div id="Lists" class="page">
+
+	</div>
+    <div id="chooseIcon" style="display:none" class="modal">
+		<div class="modalContent">
+			<div class="modalHeader">
+				<span class="modalClose" onclick="document.getElementById('chooseIcon').style.display = 'none'">&times;</span>
+                <h2>Icon Library</h2>
+                <h3>Select an icon</h3>
+            </div>
+            <div class="modalBody" id="iconPicker" style="background-color:black">
+                
+            </div>
+        </div>
+    </div>
+    <div id="chooseBanner" style="display:none" class="modal">
+		<div class="modalContent">
+			<div class="modalHeader">
+				<span class="modalClose" onclick="document.getElementById('chooseBanner').style.display = 'none'">&times;</span>
+                <h2>Banner Library</h2>
+                <h3>Select a banner</h3>
+            </div>
+            <div class="modalBody" id="bannerPicker" style="background-color:black">
+                
+            </div>
+        </div>
+    </div>
+    <div id="loadingScreen">
+        <div class="vCenter">
+            <img src="/media/brain.svg" class="img"></img>
+            <h2 style="color:blue">ExecAssist.io</h2>
+            <br>
+            <div class="loaderBlue"><div></div><div></div><div></div><div></div></div>
+        </div>
+    </div>
+	<div id="disconnectAlert" style="display:none" class="modal">
+		<div class="modalContent">
+			<div class="modalHeader">
+				<!--<span class="modalClose">&times;</span>-->
+                <h2>You are offline</h2>
+            </div>
+            <div class="modalBody">
+                <span style="color:blue">An error occured while connecting to ExecAssist.io servers. Check your internet connection and try again later.</span>
+                <br>
+                <br>
+                <button onclick="window.open('/dashboard', '_self')">Reconnect</button>
+            </div>
+            <!--
+            <div class="modalFooter">
+                <h3>Modal Footer</h3>
+            </div>
+            -->
+        </div>
+    </div>
+</center>

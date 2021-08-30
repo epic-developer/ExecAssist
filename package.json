@@ -1,0 +1,19 @@
+{
+  "name": "ExecAssist",
+  "version": "0.0.1",
+  "description": "Executive Dysfunction Assistance App for Autism and ADHD",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "David Fahim",
+  "license": "MPL-2.0",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "firebase-admin": "^9.9.0",
+    "helmet": "^4.6.0",
+    "ical-generator": "^2.2.0"
+  }
+}

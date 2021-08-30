@@ -1,0 +1,99 @@
+/*
+body {
+    background-image: url(../media/wallpaper.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+*/
+
+li {
+    font-size: 140%;
+    margin: 15px 0;
+}
+
+span {
+    color: white; /*color: blue;*/
+    font-weight: bold;
+}
+
+/*
+button {
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  border-radius: 10%;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  background-color: black; 
+  border: 2px solid blue;
+}
+
+button:hover {
+  background-color: blue;
+  color: white;
+}*/
+
+.openSourceIconBackground {
+    width: 20%;
+}
+
+@media only screen and (max-width: 768px) {
+    h1 {
+        font-size: 300%;
+    }
+    .menuOption {
+        font-size: 16px;
+    }
+    .openSourceIconBackground {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-height: 823px) {
+  /*.spacer {
+      height: 20vh;
+  }*/
+  .subsection {
+      width: 100%;
+      float: center;
+      margin: 5%;
+  }
+}
+
+@media only screen and (max-height: 667px) {
+  /*.spacer {
+      height: 30vh;
+  }*/
+  .subsection {
+      width: 100%;
+      float: center;
+      margin: 5%;
+  }
+}
+
+@media only screen and (max-height: 568px) {
+  /*.spacer {
+      height: 40vh;
+  }*/
+  .subsection {
+      width: 100%;
+      float: center;
+      margin: 5%;
+  }
+}
+
+@media only screen and (max-height: 500px) {
+  /*.spacer {
+      height: 60vh;
+  }*/
+  .subsection {
+      width: 100%;
+      float: center;
+      margin: 5%;
+  }
+}
